@@ -1,0 +1,44 @@
+1: Start
+2: Accept n as number of employees
+3: Initialize totalBonus to 0, highestBonusAmt to 0, highestBonusName to NULL, salesEmployeeCount to 0
+4: Accept employee data
+5: If the employee is from Sales, then perform Steps 6,7 and 8
+6: Calculate and display individual employeeBonus = 0.02*monthlySalary
+7: If employeeBonus is greater than highestBonusAmt, then assign employeeBonus to highestBonusAmt and employee name to highestBonusName
+8: Add employeeBonus to totalBonus and increment salesEmployeeCount
+9: Repeat Steps 4,5,6,7,8 for all n employees
+10: Display totalBonus, highestBonusName with highestBonusAmt and averageBonus equal to totalBonus/salesEmployeeCount
+11: End
+
+
+===================================================================================================================================================
+BEGIN
+    GET employeeCount
+    SET totalBonus = 0, highestBonusAmt = 0, highestBonusName = NULL, salesEmployeeCount = 0
+    FOR i = 1 to employeeCount STEP 1
+    DO
+        GET employeeData
+        IF employeeData.Department == "Sales"
+        BEGIN
+            SET employeeBonus = 0.02 * employeeData.monthlySalary
+            PRINT employeeData.Name + ":" + employeeBonus
+            totalBonus = totalBonus + employeeBonus
+            salesEmployeeCount = salesEmployeeCount + 1
+            IF employeeBonus > highestBonus
+            BEGIN
+                highestBonus = employeeBonus
+                highestBonusName = employeeData.Name
+            ENDIF
+        ENDIF
+    ENDFOR
+    SET avgBonus = totalBonus / salesEmployeeCount
+    PRINT "Average Bonus:" + avgBonus
+    PRINT "Highest Bonus:" + highestBonusName + ":" + highestBonusAmt
+    PRINT "Total Bonus:" + totalBonus
+END
+                		   
+						
+
+
+                 
+			

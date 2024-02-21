@@ -1,0 +1,25 @@
+start
+Accept withdraw amount from the user
+Total account balance is equal tp $5500
+balance amount is equal to total account balance subtract withdraw amount
+if balance amount is less than $100
+display your accountis frozen along with the message have a minimum balance is account 
+else display balance amount
+stop
+
+
+
+========================================================================================================
+
+BEGIN
+    GET withdrawAmount
+    SET totalBalance = 5500
+    SET balanceAmount = totalBalance - withdrawAmount
+    IF balanceAmount < 100
+        DISPLAY "Your account is frozen due to insufficient balance."
+        DISPLAY "You must maintain a minimum balance in your account."
+    ELSE
+        DISPLAY "Your current balance is: $" + balanceAmount
+    END IF
+
+END

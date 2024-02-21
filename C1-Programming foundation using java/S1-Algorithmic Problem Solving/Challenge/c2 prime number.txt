@@ -1,0 +1,33 @@
+Start
+get upper limit from the user
+set sum,temp,equals to 0 and i, j equal to 2
+start a loop which iterates from i till upper limit.
+start a nested loop which iterates from j till current value of i
+check if i is comletely divisible by value of j for each iteration , if yes than increse of temp by 1
+check if the value of temp is 0, if yes than add the value if counter is sum.
+after the parent loop finishes its iteration print the value of sum
+stop.
+
+=========================================================================================================================================
+
+
+BEGIN
+     GET upper_limit
+	 SET sum=0 
+	 SET temp=0
+	 FOR i=2 TO upper_limit STEP 1
+	        BEGIN
+			      FOR j=2 TO i-1 STEP 1
+				         BEGIN
+						 IF(i%j==0)
+						         BEGIN
+								 SET temp=temp+1;
+								 END
+			END
+            if temp=0 
+			        BEGIN
+					     SET sum=+sum;
+					END
+           print "sum of prime number:"+sum+"."
+END	   
+		   

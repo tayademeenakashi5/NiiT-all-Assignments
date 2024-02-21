@@ -1,0 +1,22 @@
+Algorithm
+
+Start
+Accept the Bill amount from the user
+if the bill amount is equal to 500$ or greater , discount value equalto 5% discount  *billamount%100
+Else no discount value.
+stop
+
+=====================================================================================================================
+
+
+BEGIN
+  GET bill amount 
+  If (bill amount >=500$)
+  BEGIN
+  print discount value=5%billamount%100
+  END
+ Else 
+  BEGIN
+  print no discount
+  END
+END  
